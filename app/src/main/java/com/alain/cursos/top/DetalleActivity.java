@@ -141,8 +141,8 @@ public class DetalleActivity extends AppCompatActivity implements DatePickerDial
     private void configImageView(String fotoUrl) {
         if (fotoUrl != null) {
             RequestOptions options = new RequestOptions()
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .centerCrop();
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .centerCrop();
 
             Glide.with(this)
                     .load(fotoUrl)
@@ -178,7 +178,7 @@ public class DetalleActivity extends AppCompatActivity implements DatePickerDial
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK){
+        if (resultCode == RESULT_OK) {
             if (requestCode == RC_PHOTO_PICKER) {
                 savePhotoUrlArtist(data.getDataString());
             }
@@ -235,7 +235,7 @@ public class DetalleActivity extends AppCompatActivity implements DatePickerDial
         boolean isValid = true;
 
         if (etEstatura.getText() != null && (etEstatura.getText().toString().trim().isEmpty() ||
-                Integer.valueOf(etEstatura.getText().toString().trim()) < getResources().getInteger(R.integer.estatura_min)) ) {
+                Integer.valueOf(etEstatura.getText().toString().trim()) < getResources().getInteger(R.integer.estatura_min))) {
             etEstatura.setError(getString(R.string.addArtist_error_estaturaMin));
             etEstatura.requestFocus();
             isValid = false;
@@ -305,7 +305,7 @@ public class DetalleActivity extends AppCompatActivity implements DatePickerDial
                         .setMessage(String.format(Locale.ROOT,
                                 getString(R.string.detalle_dialogDelete_message),
                                 mArtista.getNombreCompleto()))
-                        .setPositiveButton(R.string.label_dialog_delete, (dialogInterface, i)->
+                        .setPositiveButton(R.string.label_dialog_delete, (dialogInterface, i) ->
                                 savePhotoUrlArtist(null))
                         .setNegativeButton(R.string.label_dialog_cancel, null);
                 builder.show();
@@ -328,8 +328,8 @@ public class DetalleActivity extends AppCompatActivity implements DatePickerDial
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this)
                 .setTitle(R.string.addArtist_dialogUrl_title)
-                .setPositiveButton(R.string.label_dialog_add, (dialogInterface, i)->
-                    savePhotoUrlArtist(etFotoUrl.getText().toString().trim()))
+                .setPositiveButton(R.string.label_dialog_add, (dialogInterface, i) ->
+                        savePhotoUrlArtist(etFotoUrl.getText().toString().trim()))
                 .setNegativeButton(R.string.label_dialog_cancel, null);
         builder.setView(etFotoUrl);
         builder.show();

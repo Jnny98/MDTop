@@ -162,15 +162,15 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
 
     @Override
     public void onLongItemClick(final Artista artista) {
-        Vibrator vibrator = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
-        if (vibrator != null){
+        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        if (vibrator != null) {
             vibrator.vibrate(60);
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(this)
                 .setTitle(R.string.main_dialogDelete_title)
                 .setMessage(String.format(Locale.ROOT, getString(R.string.main_dialogDelete_message),
                         artista.getNombreCompleto()))
-                .setPositiveButton(R.string.label_dialog_delete, (dialogInterface, i)->{
+                .setPositiveButton(R.string.label_dialog_delete, (dialogInterface, i) -> {
                     try {
                         artista.delete();
                         adapter.remove(artista);
@@ -187,7 +187,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     @OnClick(R.id.fab)
     public void addArtist() {
         Intent intent = new Intent(MainActivity.this, AddArtistActivity.class);
-        intent.putExtra(Artista.ORDEN, adapter.getItemCount()+1);
+        intent.putExtra(Artista.ORDEN, adapter.getItemCount() + 1);
         //startActivity(intent);
         startActivityForResult(intent, 1);
     }

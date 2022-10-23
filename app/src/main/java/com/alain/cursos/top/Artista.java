@@ -15,7 +15,7 @@ import com.raizlabs.android.dbflow.annotation.Table;
 import com.raizlabs.android.dbflow.structure.BaseModel;
 
 @Table(database = TopDB.class)
-public class Artista extends BaseModel{
+public class Artista extends BaseModel {
     static final String ORDEN = "orden";
     static final String ID = "id";
 
@@ -42,7 +42,7 @@ public class Artista extends BaseModel{
     }
 
     Artista(String nombre, String apellidos, long fechaNacimiento, String lugarNacimiento,
-                   short estatura, String notas, int orden, String fotoUrl) {
+            short estatura, String notas, int orden, String fotoUrl) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.fechaNacimiento = fechaNacimiento;

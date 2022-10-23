@@ -12,6 +12,7 @@ package com.alain.cursos.top;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 
@@ -19,7 +20,7 @@ import java.util.Calendar;
 import java.util.Locale;
 import java.util.Objects;
 
-public class DialogSelectorFecha extends DialogFragment{
+public class DialogSelectorFecha extends DialogFragment {
     static final String FECHA = "fecha";
     static final String SELECTED_DATE = "selectedDate";
 
@@ -34,7 +35,7 @@ public class DialogSelectorFecha extends DialogFragment{
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         Calendar calendar = Calendar.getInstance(Locale.ROOT);
         Bundle args = this.getArguments();
-        if (args != null){
+        if (args != null) {
             long fecha = args.getLong(FECHA);
             calendar.setTimeInMillis(fecha);
         }

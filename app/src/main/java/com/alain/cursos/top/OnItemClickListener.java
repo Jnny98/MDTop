@@ -11,5 +11,6 @@ package com.alain.cursos.top;
 
 interface OnItemClickListener {
     void onItemClick(Artista artista);
+
     void onLongItemClick(Artista artista);
 }

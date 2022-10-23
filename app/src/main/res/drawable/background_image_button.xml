@@ -7,14 +7,14 @@
 
     <shape>
 
-        <solid android:color="@color/white_t"/>
+        <solid android:color="@color/white_t" />
 
         <gradient
+            android:endColor="@color/white_t"
             android:gradientRadius="100%p"
             android:startColor="@android:color/white"
-            android:endColor="@color/white_t"
-            android:type="radial"/>
+            android:type="radial" />
 
-        <corners android:radius="@dimen/imageView_radius"/>
+        <corners android:radius="@dimen/imageView_radius" />
     </shape>
 </inset>

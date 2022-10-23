@@ -17,6 +17,7 @@ import androidx.core.content.ContextCompat;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,13 +61,13 @@ public class ArtistaAdapter extends RecyclerView.Adapter<ArtistaAdapter.ViewHold
 
         holder.tvNombre.setText(artista.getNombreCompleto());
         holder.tvNote.setText(artista.getNotas());
-        holder.tvOrden.setText(String.valueOf(position+1));
+        holder.tvOrden.setText(String.valueOf(position + 1));
 
-        if (artista.getFotoUrl() != null){
+        if (artista.getFotoUrl() != null) {
             RequestOptions options = new RequestOptions()
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .centerCrop()
-                .placeholder(R.drawable.ic_sentiment_satisfied);
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .centerCrop()
+                    .placeholder(R.drawable.ic_sentiment_satisfied);
 
             Glide.with(context)
                     .load(artista.getFotoUrl())
@@ -88,7 +89,7 @@ public class ArtistaAdapter extends RecyclerView.Adapter<ArtistaAdapter.ViewHold
     }
 
     void remove(Artista artista) {
-        if (artistas.contains(artista)){
+        if (artistas.contains(artista)) {
             artistas.remove(artista);
             notifyDataSetChanged();
         }
@@ -111,7 +112,7 @@ public class ArtistaAdapter extends RecyclerView.Adapter<ArtistaAdapter.ViewHold
             ButterKnife.bind(this, itemView);
         }
 
-        void setListener(final Artista artista, final OnItemClickListener listener){
+        void setListener(final Artista artista, final OnItemClickListener listener) {
             containerMain.setOnClickListener(view -> listener.onItemClick(artista));
 
             containerMain.setOnLongClickListener(view -> {
