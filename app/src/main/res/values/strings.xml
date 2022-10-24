@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">MD Top</string>
 
-    <string name="action_lightTheme">Light Theme(Selected)</string>
+    <string name="action_lightTheme">Light Theme (Selected)</string>
     <string name="action_darkTheme">Dark Theme</string>
 
     <string name="label_dialog_add">Añadir</string>
@@ -35,5 +35,4 @@
     <string name="addArtist_title">Añadir artista</string>
     <string name="addArtist_help_required">Requerido</string>
     <string name="addArtist_help_estaturaMin">Estatura mínima: 50cm</string>
-    <string name="action_settings">settings</string>
 </resources>
